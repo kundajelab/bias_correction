@@ -1,0 +1,1 @@
+/srv/scratch/annashch/deeplearning/encode4crispr/k562_dnase/classification/train.sh

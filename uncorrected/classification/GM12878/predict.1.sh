@@ -1,0 +1,14 @@
+CUDA_VISIBLE_DEVICES=3 kerasAC_predict --index_data_path /srv/scratch/annashch/bias_correction/genomewide_labels/classificationlabels.SummitWithin200bpCenter.hdf5 \
+                   --input_data_path seq \
+                   --output_data_path /srv/scratch/annashch/bias_correction/genomewide_labels/classificationlabels.SummitWithin200bpCenter.hdf5 \
+                   --num_inputs 1 \
+                   --num_outputs 1 \
+		   --ref_fasta /users/annashch/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta \
+                   --model_hdf5 DNASE.GM12878.classificationlabels.1 \
+                   --batch_size 1000 \
+                   --predict_chroms chr2 chr19 \
+                   --threads 20 \
+                   --max_queue_size 100 \
+                   --predictions_and_labels_hdf5 predictions.DNASE.GM12878.classificationlabels.1 \
+		   --tasks GM12878 \
+		   --index_tasks GM12878

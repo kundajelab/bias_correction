@@ -1,5 +1,5 @@
 genomewide_labels --task_list tasks.tsv \
-		  --outf classificationlabels.SummitWithin200bpCenter.tsv.gz \
+		  --outf classificationlabels.SummitWithin200bpCenter.hdf5 \
 		  --output_type hdf5 \
 		  --chrom_sizes /mnt/data/annotations/by_release/hg38/hg38.chrom.sizes \
 		  --bin_stride 50 \
