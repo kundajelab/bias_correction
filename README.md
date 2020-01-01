@@ -20,3 +20,17 @@ HEPG2 --https://www.encodeproject.org/experiments/ENCSR149XIL/
 
 IMR90 --https://www.encodeproject.org/experiments/ENCSR477RTP/
 /oak/stanford/groups/akundaje/projects/atlas/dnase_processed/atac/b9e61b7e-4173-4b8c-aa38-9e55d81fef0e
+
+
+aggregate_perf_for_plotting/
+gc_covariate/ -- models for the 5 tasks, gc corrected 
+uncorrected/ -- model for the 5 tasks, not gc corrected
+
+gc_covariate_110bpwindow/ -- models for k562 with 110 smoothed windows 
+gc_covariate_200bp_ave/ -- models for k562 with gc for central 200 bp
+
+genomewide_gc/ --scripts to calculate gc content 
+genomewide_labels/ -- hdf5 seqdataloader outputs 
+interpretation/ 
+tiledb_inputs/
+
