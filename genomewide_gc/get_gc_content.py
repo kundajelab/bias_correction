@@ -46,17 +46,17 @@ def main():
     print("num_rows:"+num_rows) 
     cur_row=0 
     for index,row in data.iterrows():
-        if cur_row%100==0:
+        if cur_row%1000==0:
             print(str(cur_row)+"/"+num_rows)
-        cur_row=+1
+        cur_row+=1
         if is_narrowPeak is True:
             chrom,start,end=get_line_narrowPeak(row,args)
         else:
             chrom,start,end=get_line_hdf5(index)
         #extract fasta
         seq=ref.fetch(chrom,start,end).upper()
-        g=seq.count('g')
-        c=seq.count('c')
+        g=seq.count('G')
+        c=seq.count('C')
         gc=g+c
         gc_fract=round(gc/len(seq),2)
         if args.split_chroms is True:
@@ -78,7 +78,7 @@ def main():
             else:
                 outf.write('\n')
     #close files
-    if split_chroms is True:
+    if args.split_chroms is True:
         for chrom in outputs:
             outputs[chrom].close()
     else:
