@@ -1,0 +1,24 @@
+
+Using IDR peaks
+
+1) run_seqdataloader.sh --  runs seqdataloader with outputs by chromosome. 
+2) get_negatives.sh -- extracts negative regions from seqdataloader outputs 
+2) get_gc_universal_negatives.sh -- compute GC content for each interval in the hg19 genome universal negative set
+3) pickle_negatives.sh -- create pickles of gc content for universal negatives in the genome
+4) get_svm_peak_splits.sh
+get_svm_peak_splits.py -- create the 10 fold positive peak splits; get top 60k peaks (by qvalue in narrowPeak col 9) for each task/split for training/validation, plus all peaks in test set. center on summit, use 500 bp flank
+5) get_gc_positives.sh -- get gc content for the peak regions from 4
+6) form_svm_input_fastas.sh
+form_svm_input_fastas.py  -- get gc-matched positive and negative examples for inputs to the SVM
+7) run gkmtrain and gkmpredict
+train.C_merged.sh
+train.colo205.sh
+train.hct116.sh
+train.sw480.sh
+train.V_merged.sh
+
+
+
+
+
+
