@@ -17,8 +17,8 @@ def get_line_narrowPeak(row,args):
     end=row[2] 
     if args.center_summit==True:
         summit=start+row[9]
-        start=summit-flank_size+1
-        end=summit+flank-size
+        start=summit-args.flank_size
+        end=summit+args.flank_size
     return chrom,start,end
 
 def get_line_hdf5(index):
