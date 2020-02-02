@@ -1,5 +1,8 @@
-for task in K562 #GM12878 H1ESC HEPG2 IMR90 K562
+
+for task in IMR90  #GM12878 H1ESC HEPG2 IMR90 K562
 do
+    #DELETE THE OLD ONES!
+    rm $task/$task.svm.inputs.t* 
     for chrom in `seq 1 22` X Y
     do
 	python form_svm_input_fastas.py --outf $task/$task.svm.inputs.test.0  $task/$task.svm.inputs.test.4  $task/$task.svm.inputs.test.8   $task/$task.svm.inputs.train.2  $task/$task.svm.inputs.train.6 $task/$task.svm.inputs.test.1  $task/$task.svm.inputs.test.5  $task/$task.svm.inputs.test.9   $task/$task.svm.inputs.train.3  $task/$task.svm.inputs.train.7 $task/$task.svm.inputs.test.2  $task/$task.svm.inputs.test.6  $task/$task.svm.inputs.train.0  $task/$task.svm.inputs.train.4  $task/$task.svm.inputs.train.8 $task/$task.svm.inputs.test.3  $task/$task.svm.inputs.test.7  $task/$task.svm.inputs.train.1  $task/$task.svm.inputs.train.5  $task/$task.svm.inputs.train.9 \
