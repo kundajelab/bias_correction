@@ -1,0 +1,8 @@
+ATAC-seq bias tracks from 
+https://www.ncbi.nlm.nih.gov/sra/?term=SRX030445
+SRR072187.4
+SRR072187.4_1.fastq
+SRR072187.4_2.fastq
+
+https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR1565781 (K562 Deproteinized DNAse) 
+https://trace.ncbi.nlm.nih.gov/Traces/sra/?run=SRR1565782 (MCF7 Deproteinized DNAse)
