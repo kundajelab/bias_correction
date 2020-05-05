@@ -12,12 +12,14 @@ def main():
     gc_dict={}
     index=0 
     for line in data:
+        line=line.strip('\n')
+        
         index+=1
         if index%1000000==0:
             print(index) 
         tokens=line.split('\t')
         chrom=tokens[0]
-        gc=tokens[-1]
+        gc=float(tokens[-1])
         start=tokens[1]
         end=tokens[2]
         if chrom not in gc_dict:

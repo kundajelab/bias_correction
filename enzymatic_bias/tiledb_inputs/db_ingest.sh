@@ -1,6 +1,7 @@
 #!/bin/bash
-db_ingest --tiledb_metadata SRR1565781.task.tsv \
-	  --array_name SRR1565781 \
+task_name=$1
+db_ingest --tiledb_metadata $task_name.task.tsv \
+	  --array_name $task_name \
 	  --chrom_sizes ~/hg38.chrom.sizes \
 	  --attribute_config generic_bigwig \
 	  --coord_tile_size 10000 \
