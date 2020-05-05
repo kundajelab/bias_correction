@@ -17,7 +17,7 @@ def parse_args():
 def main():
     args=parse_args()
     outf=pyBigWig.open(args.outf,'w') 
-    kmers=pd.read_csv(args.kmers,header=None,index_col=0,sep=' ').to_dict()[1]
+    kmers=pd.read_csv(args.kmers,header=None,index_col=0,sep='\t').to_dict()[1]
     print("loaded kmers")
     fasta=pysam.FastaFile(args.ref_fasta)
     chrom_sizes=pd.read_csv(args.chrom_sizes,header=None,sep='\t')
@@ -32,12 +32,13 @@ def main():
     
     for index,row in chrom_sizes.iterrows():
         chrom_name=row[0]
+        print(chrom_name) 
         chrom_size=row[1]
         chrom_seq=fasta.fetch(chrom_name,0,chrom_size).upper()
         print("got sequence for chrom:"+str(chrom_name))
         cur_chrom_array=np.empty((chrom_size))
         for i in range(chrom_size):
-            if i%10000==0:
+            if i%1000000==0:
                 print(str(i))
             left_flank=max([0,i-5])
             right_flank=min([i+6,chrom_size])
