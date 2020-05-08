@@ -36,26 +36,13 @@ def main():
         chrom_size=row[1]
         chrom_seq=fasta.fetch(chrom_name,0,chrom_size).upper()
         print("got sequence for chrom:"+str(chrom_name))
-        cur_chrom_array=np.empty((chrom_size))
-        for i in range(chrom_size):
+        cur_chrom_array=np.zeros((chrom_size))
+        for i in range(3,chrom_size-2):
             if i%1000000==0:
                 print(str(i))
-            left_flank=max([0,i-5])
-            right_flank=min([i+6,chrom_size])
-            flank_seq=chrom_seq[left_flank:right_flank]
-            total=0
-            n=0
-            for j in range(len(flank_seq)-5):
-                try:
-                    cur_seq=flank_seq[j:j+6]
-                    total+=kmers[tmp_seq]
-                    n+=1
-                except:
-                    pass
-            if n==0:
-                cur_chrom_array[i]=0
-            else:
-                cur_chrom_array[i]=total/n
+            cur_seq=chrom_seq[i-3:i+3]
+            if cur_seq in kmers: 
+                cur_chrom_array[i]=kmers[cur_seq]
         outf.addEntries(chrom_name,index,values=cur_chrom_array,span=1,step=1)
     outf.close() 
             
