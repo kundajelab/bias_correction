@@ -1,6 +1,6 @@
 #!/bin/bash
 task_name=$1
-db_ingest --tiledb_metadata $task_name.task.tsv \
+db_ingest --tiledb_metadata $task_name.tsv \
 	  --array_name $task_name \
 	  --chrom_sizes ~/hg38.chrom.sizes \
 	  --attribute_config generic_bigwig \
@@ -10,7 +10,6 @@ db_ingest --tiledb_metadata $task_name.task.tsv \
 	  --threads 20 \
 	  --max_queue_size 50 \
 	  --max_mem_g 200 
-
 
 
 
