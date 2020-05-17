@@ -38,7 +38,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --num_inputs 1 \
 		    --num_outputs 2 \
 		    --chrom_sizes ~/hg38.chrom.sizes \
-		    --tiledb_stride 500 \
+		    --tiledb_stride 1000 \
 		    --fold $fold \
 		    --genome hg38 \
 		    --predictions_and_labels_hdf5 $outdir/$model_name.$fold \

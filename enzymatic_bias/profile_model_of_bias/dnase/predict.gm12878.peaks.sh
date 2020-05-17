@@ -25,6 +25,8 @@ fi
 echo "outdir:$outdir"
 CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --batch_size 20 \
+		    --bed_regions gm12878.overlap.narrowPeak.gz \
+		    --center_on_summit \
 		    --ref_fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta \
 		    --tdb_array /srv/scratch/annashch/bias_correction/enzymatic_bias/tiledb_inputs/merged.SRR1565781.SRR1565782 \
 		    --tdb_input_source_attribute seq \
@@ -39,9 +41,8 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --num_outputs 2 \
 		    --chrom_sizes ~/hg38.chrom.sizes \
 		    --tiledb_stride 1000 \
-		    --fold $fold \
 		    --genome hg38 \
-		    --predictions_and_labels_hdf5 $outdir/$model_name.$fold \
+		    --predictions_and_labels_hdf5 $outdir/gm12878.dnase.$fold \
 		    --load_model_hdf5 $outdir/$model_name.$fold.hdf5 \
 		    --tasks SRR1565781.SRR1565782 \
 		    --tdb_ambig_attribute ambig_peak \
