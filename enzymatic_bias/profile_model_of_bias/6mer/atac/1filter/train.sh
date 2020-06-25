@@ -58,7 +58,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_train \
 		    --patience 3 \
 		    --patience_lr 2 \
 		    --model_prefix $outdir/$model_name.$fold \
-		    --architecture_spec profile_bias \
+		    --architecture_spec profile_learn_bias \
 		    --model_params params.txt \
 		    --use_multiprocessing False \
 		    --tasks SRR072187 \
