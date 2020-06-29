@@ -1,15 +1,10 @@
-
-#for kmer_list in atac.gm12878.0.computed.24mer.sum dnase.gm12878.0.computed.24mer.sum dnase.k562.0.computed.24mer.sum  atac.gm12878.0.computed.24mer.first dnase.gm12878.0.computed.24mer.first dnase.k562.0.computed.24mer.first atac.gm12878.0.computed.24mer.center dnase.gm12878.0.computed.24mer.center dnase.k562.0.computed.24mer.center
-#for kmer_list in deepshap.dnase.k562.0.computed.6mer.center.profile deepshap.dnase.k562.0.computed.6mer.sum.profile deepshap.dnase.k562.0.computed.6mer.first.profile
-#for kmer_list in deepshap.dnase.gm12878.0.computed.6mer.center.profile deepshap.dnase.gm12878.0.computed.6mer.sum.profile deepshap.dnase.gm12878.0.computed.6mer.first.profile
-for kmer_list in deepshap.atac.gm12878.0.computed.6mer.center.profile deepshap.atac.gm12878.0.computed.6mer.sum.profile deepshap.atac.gm12878.0.computed.6mer.first.profile
+for method in center sum first
 do
-    echo "starting $kmer_list" 
-    python get_pwm.py --kmer_list $kmer_list --outf deepshap.pwm.$kmer_list --type prob  --k 6 
-    echo "finished $kmer_list"
+    python get_pwm.deepshap.py -predictions_pickle /srv/scratch/annashch/bias_correction/enzymatic_bias/profile_model_of_bias/dnase/gm12878.deepshap.bpnet.p -prediction_kmer_scores dnase.gm12878.0.computed.6mer.$method -fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta -outf deepshap.pwm.dnase.gm12878.6mer.$method &
+
+
+    python get_pwm.deepshap.py -predictions_pickle /srv/scratch/annashch/bias_correction/enzymatic_bias/profile_model_of_bias/dnase/k562.deepshap.bpnet.p -prediction_kmer_scores dnase.k562.0.computed.6mer.$method -fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta -outf deepshap.pwm.dnase.k562.6mer.$method &
+
+
+    python get_pwm.deepshap.py -predictions_pickle /srv/scratch/annashch/bias_correction/enzymatic_bias/profile_model_of_bias/atac/gm12878.atac.deepshap.bpnet.p -prediction_kmer_scores atac.gm12878.0.computed.6mer.$method -fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta -outf deepshap.pwm.atac.gm12878.6mer.$method & 
 done
-#do
-#    echo "starting $kmer_list" 
-#    python get_pwm.py --kmer_list $kmer_list --outf deepshap.pwm.$kmer_list --type prob  --k 24 
-#    echo "finished $kmer_list"
-#done

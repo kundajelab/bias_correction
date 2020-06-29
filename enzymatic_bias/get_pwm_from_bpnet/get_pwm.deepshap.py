@@ -14,7 +14,6 @@ def parse_args():
     parser.add_argument("--flank",type=int,default=673)
     parser.add_argument("--kmer_size",type=int,default=6)
     parser.add_argument("-outf")
-    parser.add_argument("-method",choices=['sum','center','first']) 
     return parser.parse_args()
 
 def main():
