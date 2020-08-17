@@ -1,3 +1,25 @@
+The trained bias models for ATAC & DNASE are on the Kundaje lab cluster : `/mnt/lab_data2/bia_correction`
+
+
+# To train bpnet ATAC/DNASE with Bias correction: 
+
+1) Populate data files in ./data folder  
+As a reminder, you can generate stranded & unstranded counts from your bam pipeline outputs with this script:  
+https://github.com/kundajelab/atlas_resources/blob/master/augment_dnase_pipeline_outputs/bpnet_count_tracks/bpnet_count_tracks.sh  
+
+2) `./tiledb/db_ingest.sh` to generate tiledb database  
+
+3) `./get_loss_weights.sh` Get the counts loss weight
+
+4) `./pred_from_bias/run.sh` Get model predictions from bias (i.e. freeze sequence component)  
+
+5) `./bias_corrected_bpnet/run.sh` Get model predictions from sequence, plugging in frozen bias component  
+The full model is outlined here:  
+https://app.lucidchart.com/documents/edit/960c5e3d-1906-4253-a40f-857c0deb70e6  
+
+
+
+
 # bias_correction
 Bias correction -- GC and enzymatic bias 
 
