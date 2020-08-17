@@ -28,7 +28,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --bed_regions gm12878.atac.overlap.narrowPeak.gz \
 		    --center_on_summit \
 		    --ref_fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta \
-		    --tdb_array /srv/scratch/annashch/bias_correction/enzymatic_bias/tiledb_inputs/merged.SRR1565781.SRR1565782 \
+		    --tdb_array /srv/scratch/annashch/bias_correction/enzymatic_bias/tiledb_inputs/SRR072187 \
 		    --tdb_input_source_attribute seq \
 		    --tdb_input_aggregation None \
 		    --tdb_input_transformation None \
@@ -43,7 +43,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --tiledb_stride 1000 \
 		    --genome hg38 \
 		    --predictions_and_labels_hdf5 $outdir/$model_name.$fold \
-		    --load_model_hdf5 $model_name.$fold.hdf5 \
-		    --tasks SRR1565781.SRR1565782 \
+		    --load_model_hdf5 seed$seed/$model_name.$fold.hdf5 \
+		    --tasks SRR072187 \
 		    --tdb_ambig_attribute ambig_peak \
 		    --tdb_transformation_pseudocount 0.001

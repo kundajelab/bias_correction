@@ -43,7 +43,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_predict_tdb \
 		    --tiledb_stride 1000 \
 		    --genome hg38 \
 		    --predictions_and_labels_hdf5 $outdir/k562.dnase.$fold \
-		    --load_model_hdf5 $model_name.$fold.hdf5 \
+		    --load_model_hdf5 seed$seed/$model_name.$fold.hdf5 \
 		    --tasks SRR1565781.SRR1565782 \
 		    --tdb_ambig_attribute ambig_peak \
 		    --tdb_transformation_pseudocount 0.001

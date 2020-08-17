@@ -57,7 +57,7 @@ def getModelGivenModelOptionsAndWeightInits(args):
     print("profile_loss_weight:"+str(profile_loss_weight))
 
     #load the fixed weights
-    conv1_pwm=np.expand_dims(np.transpose(np.loadtxt('/srv/scratch/annashch/bias_correction/enzymatic_bias_kmer/pwm.SeqBias_ATAC.txt')),axis=-1)
+    conv1_pwm=np.expand_dims(np.transpose(np.loadtxt('/srv/scratch/annashch/bias_correction/enzymatic_bias/get_pwm_from_kmer/pwm.SeqBias_ATAC.txt')),axis=-1)
     conv1_bias=np.zeros((1,))
     conv1_frozen_weights=[conv1_pwm, conv1_bias]
 

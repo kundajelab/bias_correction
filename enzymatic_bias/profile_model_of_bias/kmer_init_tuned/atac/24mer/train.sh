@@ -31,7 +31,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_train \
 		    --seed $seed \
 		    --batch_size 25 \
 		    --ref_fasta /mnt/data/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta \
-		    --tdb_array /srv/scratch/annashch/bias_correction/enzymatic_bias/tiledb_inputs/merged.SRR1565781.SRR1565782 \
+		    --tdb_array /srv/scratch/annashch/bias_correction/enzymatic_bias/tiledb_inputs/SRR072187 \
 		    --tdb_input_source_attribute seq \
 		    --tdb_input_aggregation None \
 		    --tdb_input_transformation None \
@@ -61,7 +61,7 @@ CUDA_VISIBLE_DEVICES=$gpu kerasAC_train \
 		    --architecture_from_file model.py \
 		    --model_params params.txt \
 		    --use_multiprocessing False \
-		    --tasks SRR1565781.SRR1565782 \
+		    --tasks SRR072187 \
 		    --upsample_ratio_list_train 0 \
 		    --upsample_ratio_list_eval 0 \
 		    --trackables logcount_predictions_loss loss profile_predictions_loss val_logcount_predictions_loss val_loss val_profile_predictions_loss
