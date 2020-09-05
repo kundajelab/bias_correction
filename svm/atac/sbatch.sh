@@ -1,4 +1,4 @@
-for task in DopaNeuronsCluster10
+for task in GM12878 HEPG2 H1ESC IMR90
 do
     for fold in `seq 0 9` 
     do
