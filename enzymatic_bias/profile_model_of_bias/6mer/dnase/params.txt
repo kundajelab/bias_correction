@@ -1,0 +1,5 @@
+counts_loss_weight	18
+profile_loss_weight	1
+filters	5
+conv1_kernel_size	6
+
