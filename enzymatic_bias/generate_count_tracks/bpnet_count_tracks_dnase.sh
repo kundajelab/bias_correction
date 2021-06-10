@@ -2,7 +2,6 @@
 cur_bam=$1
 #source activate encode-atac-seq-pipeline
 
-
 #non-stranded (can be PE or SE) 
 bamCoverage -p16 -v --binSize 1 --samFlagExclude 780 --Offset 1 1 --minMappingQuality 30 -b $cur_bam -o $cur_bam.bpnet.unstranded.bw
 

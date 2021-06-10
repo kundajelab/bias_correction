@@ -130,4 +130,12 @@ venv.bak/
 *nonzerobins
 *.tsv
 *.bed
+*.bw
+*.txt
+*.pickle
+*.pdf
+*.gz
+*.bam
+*.bai
+*.tbi
 
